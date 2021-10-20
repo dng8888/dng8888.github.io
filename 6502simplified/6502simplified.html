@@ -1,0 +1,130 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta property="twitter:account_id" content="17736965">
+    <title>Easy 6502 by skilldrick Simplfied by Dennis</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Easy 6502 <p> </p>Simplfied by Dennis</h1>
+        <p><em>by</em> <a href="https://twitter.com/skilldrick">Nick Morgan</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+        <p class="view"><a href="https://github.com/skilldrick/easy6502/tree/gh-pages">Fork me on GitHub</a></p>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+        </ul>
+      </header>
+      <section>
+
+        <h2 id="intro">Introduction</h2>
+
+
+<h2 id="first-program">Our first program</h2>
+
+<p>So, let’s dive in! That thing below is a little <a href="https://github.com/skilldrick/6502js">JavaScript 6502 assembler and
+simulator</a> that I adapted for this book.
+Click <strong>Assemble</strong> then <strong>Run</strong> to assemble and run the snippet of assembly language.</p>
+
+<div class="widget">
+  <div class="buttons">
+    <input type="button" value="Assemble" class="assembleButton">
+    <input type="button" value="Run" class="runButton" disabled="disabled">
+    <input type="button" value="Reset" class="resetButton" disabled="disabled">
+    <input type="button" value="Hexdump" class="hexdumpButton" disabled="disabled">
+    <input type="button" value="Disassemble" class="disassembleButton" disabled="disabled">
+    <input type="button" value="Notes" class="notesButton">
+  </div>
+
+  <textarea class="code">
+LDA #$01
+STA $0200
+LDA #$05
+STA $0201
+LDA #$08
+STA $0202
+
+  </textarea>
+
+  <canvas class="screen" width="160" height="160"></canvas>
+
+  <div class="debugger">
+    <input type="checkbox" class="debug" name="debug" disabled="disabled">
+    <label for="debug">Debugger</label>
+    <div class="minidebugger">A=$00 X=$00 Y=$00<br>SP=$ff PC=$0600<br>NV-BDIZC<br>00110000</div>
+    <div class="buttons">
+      <input type="button" value="Step" class="stepButton" disabled="disabled">
+      <input type="button" value="Jump to..." class="gotoButton" disabled="disabled">
+    </div>
+  </div>
+
+  <div class="monitorControls">
+    <label for="monitoring">Monitor</label>
+    <input type="checkbox" class="monitoring" name="monitoring">
+
+    <label for="start">Start: $</label>
+    <input type="text" value="0" class="start" name="start">
+    <label for="length">Length: $</label>
+    <input type="text" value="ff" class="length" name="length">
+  </div>
+
+  <div class="monitor"><pre><code></code></pre></div>
+  <div class="messages"><pre><code></code></pre></div>
+
+  <div class="notes" style="display: none">Notes:
+
+Memory location $fe contains a new random byte on every instruction.
+Memory location $ff contains the ascii code of the last key pressed.
+
+Memory locations $200 to $5ff map to the screen pixels. Different values will
+draw different colour pixels. The colours are:
+
+$0: Black
+$1: White
+$2: Red
+$3: Cyan
+$4: Purple
+$5: Green
+$6: Blue
+$7: Yellow
+$8: Orange
+$9: Brown
+$a: Light red
+$b: Dark grey
+$c: Grey
+$d: Light green
+$e: Light blue
+$f: Light grey
+    </div>
+</div>
+
+
+
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script src="es5-shim.js"></script>
+    <script src="assembler.js"></script>
+    <script src="scale.fix.js"></script>
+    </script><script src="ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-3174668-13");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+  
+
+</body></html>
